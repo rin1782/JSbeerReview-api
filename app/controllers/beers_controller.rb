@@ -1,21 +1,22 @@
 class BeersController < ApplicationController
 
     def index
-        render json: Beer.all 
+        beers = Beer.all
+        render json: beers
     end
 
-    def create
-        beer = Beer.new(beer_params)
+    # def create
+    #     beer = Beer.new(beer_params)
 
-        if beer.save
-            render json: beer
-        end
-    end
+    #     if beer.save
+    #         render json: BeerSerializer.new(beer)
+    #     end
+    # end
 
-    private
+    # private
 
-    def beer_params
-        params.require(:beer).permit(:name)
-    end
+    # def beer_params
+    #     params.require(:beer).permit(:name)
+    # end
         
 end
