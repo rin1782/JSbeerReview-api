@@ -1,25 +1,20 @@
 class ReviewsController < ApplicationController
 
     def index
-        reviews = Beer.find_by(id: params[:beer_id]).reviews
+
+        reviews = Review.all
         render json: reviews
     end
 
-    def create
-        review = Review.new(review_params)
+    
 
+    def create
+        beer = Beer.find_by(id: params[:beer_id])
+        review = beer.reviews.build(review_params)
         if review.save
             render json: review
         end
     end
-
-    # def create
-    #     donut = Donut.find_by(id: params[:donut_id])
-    #     review = donut.reviews.build(review_params)
-    #     if review.save
-    #         render json: review
-    #     end
-    # end
 
     private
 

@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Beer.create(name: "Bud")
-Beer.create(name: "White Claw")
-Beer.create(name: "Mich Ultra")
-Beer.create(name: "Yuengling")
-Beer.create(name: "Guiness")
+bud = Beer.create(name: "Bud")
+claw = Beer.create(name: "White Claw")
+ultra = Beer.create(name: "Mich Ultra")
+
+Review.create(content: "smooth lager, easy drinking in summer", beer_id: bud.id)
+Review.create(content: "tastes like soda, goes down too easy", beer_id: claw.id)
+Review.create(content: "my dad drinks this at weddings", beer_id: ultra.id)
+
