@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app to leave a review/comment on a listed beer.
 
-Things you may want to cover:
+The frontend was created using JavaScript and connects to a backend Rails API.
 
-* Ruby version
+Upon loading the document, a user will see a list of preset beers. 
+    **Eventually I would like to add a function to add beers to the list. 
 
-* System dependencies
+A user will then click on a beer to be able to leave a comment/review on the beer's show page.
 
-* Configuration
+The beer's show page also includes a home button to return to the original list of beers. 
 
-* Database creation
+TO RUN:
 
-* Database initialization
+this is run locally, so a user will load into their code base, and run "rails s" in the terminal.
+This will connect it with your local host (localhost/3000)
 
-* How to run the test suite
+Switch directory to front end of application (js)
 
-* Services (job queues, cache servers, search engines, etc.)
+FRONTEND REPO: https://github.com/rin1782/JSbeerReviewFRONT
 
-* Deployment instructions
+once in directory, run "open index.html" 
 
-* ...
+
+
+

@@ -1,23 +1,21 @@
 class ReviewsController < ApplicationController
 
-    def index
-
-        reviews = Review.all
-        render json: reviews
-    end
-
     def create
-        review = Review.new(review_params)
+        beer = Beer.find_by(id: params[:beer_id])
+        review = beer.reviews.build(review_params)
         if review.save
-            render json: ReviewSerializer.new(review)
-        else
-            render json: {message: review.errors.full_messages}
+            render json: review
         end
     end
 
-    private
+    def index
+        
+        reviews = Beer.find_by(id: params[:beer_id]).reviews
+        render json: reviews
+    end
 
+    private
     def review_params
-        params.require(:review).permit(:content, :beer_id)
+        params.require(:review).permit(:content)
     end
 end

@@ -1,5 +1,6 @@
 class Beer < ApplicationRecord
-    has_many :reviews, dependent: :destroy
+    has_many :reviews
+    
 
-    validates :name, prescence: true
+    
 end
