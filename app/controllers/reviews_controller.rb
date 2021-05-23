@@ -6,13 +6,12 @@ class ReviewsController < ApplicationController
         render json: reviews
     end
 
-    
-
     def create
-        beer = Beer.find_by(id: params[:beer_id])
-        review = beer.reviews.build(review_params)
+        review = Review.new(review_params)
         if review.save
-            render json: review
+            render json: ReviewSerializer.new(review)
+        else
+            render json: {message: review.errors.full_messages}
         end
     end
 

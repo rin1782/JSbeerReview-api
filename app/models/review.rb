@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :beer 
-  
+  has_one :beer 
+  validates :content, prescence: true
 end
